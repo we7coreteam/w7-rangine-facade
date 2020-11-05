@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "W7\\Contract\\": ""
+            "W7\\Facade\\": "src/"
         }
     }
 }
