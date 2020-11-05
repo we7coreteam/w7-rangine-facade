@@ -12,7 +12,7 @@
 
 namespace W7\Facade;
 
-use W7\Contract\Events\EventDispatcherInterface;
+use W7\Contract\Event\EventDispatcherInterface;
 
 /**
  * Class Event
@@ -20,7 +20,7 @@ use W7\Contract\Events\EventDispatcherInterface;
  *
  * @method static \Closure createClassListener(string $listener, bool $wildcard = false)
  * @method static \Closure makeListener(\Closure|string $listener, bool $wildcard = false)
- * @method static DispatcherInterface setQueueResolver(callable $resolver)
+ * @method static EventDispatcherInterface setQueueResolver(callable $resolver)
  * @method static array getListeners(string $eventName)
  * @method static array|null dispatch(string|object $event, mixed $payload = [], bool $halt = false)
  * @method static array|null until(string|object $event, mixed $payload = [])
