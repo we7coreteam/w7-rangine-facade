@@ -12,7 +12,7 @@
 
 namespace W7\Facade;
 
-use W7\Contract\Task\TaskInterface;
+use W7\Contract\Task\TaskDispatcherInterface;
 use W7\Core\Message\TaskMessage;
 
 /**
@@ -23,7 +23,7 @@ use W7\Core\Message\TaskMessage;
  */
 class Task extends FacadeAbstract {
 	protected static function getFacadeAccessor() {
-		return TaskInterface::class;
+		return TaskDispatcherInterface::class;
 	}
 
 	public static function dispatch($taskName, $params = [], int $timeout = null) {
