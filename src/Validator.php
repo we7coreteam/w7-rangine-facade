@@ -23,7 +23,7 @@ use W7\Contract\Validation\ValidatorFactoryInterface;
  * @method static void extendImplicit(string $rule, \Closure|string $extension, string $message = null)
  * @method static void replacer(string $rule, \Closure|string $replacer)
  *
- * @see \Illuminate\Validation\Factory
+ * @see \W7\Core\Validation\ValidationFactory
  */
 class Validator extends FacadeAbstract {
 	protected static function getFacadeAccessor() {

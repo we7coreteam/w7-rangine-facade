@@ -7,7 +7,7 @@ use W7\Contract\Queue\QueueInterface;
 
 /**
  * Class Queue
- * @package W7\Mq\Facade
+ * @package W7\Facade
  *
  * @method static QueueInterface connection($name = '');
  * @method static int size($queue = null);
