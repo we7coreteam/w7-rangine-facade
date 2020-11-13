@@ -9,10 +9,11 @@
             "email": "donknap@gmail.com"
         }
     ],
-    "repositories": [{
-        "type": "path",
-        "url": "../w7-rangine-contract"
-    }
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../w7-rangine-contract"
+        }
     ],
     "require": {
         "php": ">=7.2",
