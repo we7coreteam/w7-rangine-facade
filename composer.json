@@ -13,15 +13,9 @@
 			"email": "donknap@gmail.com"
 		}
 	],
-	"repositories": [
-		{
-			"type": "path",
-			"url": "../w7-rangine-contract"
-		}
-	],
 	"require": {
 		"php": ">=7.2",
-		"w7/rangine-contract": "dev-master"
+		"w7/rangine-contract": "*"
 	},
 	"require-dev": {
 		"w7/php-cs-fixer": "*"
