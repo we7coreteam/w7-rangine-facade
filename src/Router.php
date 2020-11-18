@@ -12,7 +12,6 @@
 
 namespace W7\Facade;
 
-use W7\Contract\Router\ResourceRouteInterface;
 use W7\Contract\Router\RouterInterface;
 use W7\Contract\Router\ValidatorInterface;
 
@@ -34,7 +33,7 @@ use W7\Contract\Router\ValidatorInterface;
  * @method static bool view($uri, string $view)
  * @method static bool add($methods, $uri, $handler, $name = '', $defaults = [])
  * @method static bool all($uri, $handler)
- * @method static ResourceRouteInterface apiResource($name, $controller, $options = [])
+ * @method static mixed apiResource($name, $controller, $options = [])
  * @method static RouterInterface middleware($name)
  * @method static RouterInterface name($name)
  * @method static array getData()

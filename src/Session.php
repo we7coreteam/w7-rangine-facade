@@ -16,6 +16,7 @@ namespace W7\Facade;
  * Class Session
  * @package W7\Facade
  *
+ * @method static string getName()
  * @method static void setId($sessionId)
  * @method static string getId()
  * @method static bool set($key, $value)
