@@ -17,9 +17,9 @@ use W7\Contract\Queue\QueueInterface;
  * @method static mixed later($delay, $job, $data = '', $queue = null);
  * @method static mixed laterOn($queue, $delay, $job, $data = '');
  * @method static mixed bulk($jobs, $data = '', $queue = null);
- * @method static \Illuminate\Contracts\Queue\Job|null pop($queue = null);
+ * @method static mixed pop($queue = null);
  * @method static string getConnectionName();
- * @method static \Illuminate\Contracts\Queue\Queue setConnectionName($name);
+ * @method static QueueInterface setConnectionName($name);
  * @method static void createPayloadUsing($callback)
  */
 class Queue extends FacadeAbstract {
