@@ -13,12 +13,13 @@
 namespace W7\Facade;
 
 use W7\Contract\Validation\ValidatorFactoryInterface;
+use W7\Contract\Validation\ValidatorInterface;
 
 /**
  * Class Validator
  * @package W7\Core\Facades
  *
- * @method static \Illuminate\Contracts\Validation\Validator make(array $data, array $rules, array $messages = [], array $customAttributes = [])
+ * @method static ValidatorInterface make(array $data, array $rules, array $messages = [], array $customAttributes = [])
  * @method static void extend(string $rule, \Closure|string $extension, string $message = null)
  * @method static void extendImplicit(string $rule, \Closure|string $extension, string $message = null)
  * @method static void replacer(string $rule, \Closure|string $replacer)
