@@ -16,29 +16,8 @@ use RuntimeException;
 use W7\App;
 
 abstract class FacadeAbstract {
-	/**
-	 * The resolved object instances.
-	 *
-	 * @var array
-	 */
-	public static $resolvedInstance;
-
-	/**
-	 * Resolve the facade root instance from the container.
-	 *
-	 * @param  object|string  $name
-	 * @return mixed
-	 */
-	protected static function resolveFacadeInstance($name) {
-		if (is_object($name)) {
-			return $name;
-		}
-
-		if (isset(static::$resolvedInstance[$name])) {
-			return static::$resolvedInstance[$name];
-		}
-
-		return static::$resolvedInstance[$name] = self::getContainer()->get($name);
+	public static function getContainer() {
+		return App::getApp()->getContainer();
 	}
 
 	/**
@@ -47,11 +26,7 @@ abstract class FacadeAbstract {
 	 * @return mixed
 	 */
 	public static function getFacadeRoot() {
-		return static::resolveFacadeInstance(static::getFacadeAccessor());
-	}
-
-	public static function getContainer() {
-		return App::getApp()->getContainer();
+		return self::getContainer()->singleton(static::getFacadeAccessor());
 	}
 
 	/**
