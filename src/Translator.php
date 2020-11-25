@@ -18,6 +18,7 @@ use W7\Contract\Translation\TranslatorInterface;
  * @method static string getLocale()
  * @method static void setLocale(string $locale)
  * @method static string|array|null get(string $key, array $replace = [], string $locale = null, bool $fallback = true)
+ * @method static string choice($key, $number, array $replace = [], $locale = null)
  *
  * @see \W7\Lang\Translator\Translator
  */

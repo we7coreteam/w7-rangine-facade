@@ -20,7 +20,6 @@ use W7\Contract\Queue\QueueInterface;
  * @method static mixed pop($queue = null);
  * @method static string getConnectionName();
  * @method static QueueInterface setConnectionName($name);
- * @method static void createPayloadUsing($callback)
  */
 class Queue extends FacadeAbstract {
 	protected static function getFacadeAccessor() {

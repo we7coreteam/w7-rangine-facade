@@ -19,7 +19,6 @@ use W7\Contract\Lock\LockInterface;
  * Class LockFactory
  * @package W7\Facade
  *
- * @method static LockFactoryInterface channel($channel = 'default');
  * @method static LockInterface getLock($name, $seconds, $owner = null);
  */
 class Lock extends FacadeAbstract {
