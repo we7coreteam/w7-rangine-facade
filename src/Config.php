@@ -13,15 +13,11 @@
 namespace W7\Facade;
 
 use W7\App;
+use W7\Contract\Config\RepositoryInterface;
 
 /**
  * Class Config
  * @package W7\Facade
- *
- * @method static array set($key, $value)
- * @method static bool has($key)
- * @method static mixed get($key, $default = null)
- * @method static array all()
  *
  * @see \W7\Core\Config\Config
  */
@@ -30,7 +26,23 @@ class Config extends FacadeAbstract {
 		return '';
 	}
 
-	public static function getFacadeRoot() {
+	public static function getFacadeRoot() : RepositoryInterface {
 		return App::getApp()->getConfigger();
+	}
+
+	public static function set($key, $value) {
+		return static::getFacadeRoot()->set($key, $value);
+	}
+
+	public static function has($key) {
+		return static::getFacadeRoot()->has($key);
+	}
+
+	public static function get($key, $default = null) {
+		return static::getFacadeRoot()->get($key, $default);
+	}
+
+	public static function all() {
+		return static::getFacadeRoot()->all();
 	}
 }
