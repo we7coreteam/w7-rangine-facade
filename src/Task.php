@@ -19,7 +19,7 @@ use W7\Core\Message\TaskMessage;
  * Class Task
  * @package W7\Facade
  *
- * @method static TaskMessage dispatchNow($message, $server = null, $taskId = null, $workerId = null)
+ * @see \W7\Core\Task\TaskDispatcher
  */
 class Task extends FacadeAbstract {
 	protected static function getFacadeAccessor() {

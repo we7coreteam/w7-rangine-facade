@@ -18,9 +18,10 @@ use W7\App;
  * Class Config
  * @package W7\Facade
  *
- * @method static string getBuiltInConfigPath()
- * @method static mixed get($key, $default = null)
  * @method static array set($key, $value)
+ * @method static bool has($key)
+ * @method static mixed get($key, $default = null)
+ * @method static array all()
  *
  * @see \W7\Core\Config\Config
  */
