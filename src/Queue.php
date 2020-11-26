@@ -103,17 +103,17 @@ class Queue extends FacadeAbstract {
 	}
 
 	/**
-	 * @return string
-	 */
-	public static function getConnectionName() {
-		return static::getFacadeRoot()->getConnectionName();
-	}
-
-	/**
 	 * @param $name
 	 * @return QueueInterface
 	 */
 	public static function setConnectionName($name) {
 		return static::getFacadeRoot()->setConnectionName($name);
+	}
+
+	/**
+	 * @return string
+	 */
+	public static function getConnectionName() {
+		return static::getFacadeRoot()->getConnectionName();
 	}
 }
