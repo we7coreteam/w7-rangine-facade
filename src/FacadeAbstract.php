@@ -16,7 +16,7 @@ use RuntimeException;
 use W7\App;
 
 abstract class FacadeAbstract {
-	public static function getContainer() {
+	protected static function getContainer() {
 		return App::getApp()->getContainer();
 	}
 

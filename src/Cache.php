@@ -65,14 +65,14 @@ class Cache extends FacadeAbstract {
 	 * @return bool
 	 * @throws \Psr\SimpleCache\InvalidArgumentException
 	 */
-	public function delete($key) {
+	public static function delete($key) {
 		return static::getFacadeRoot()->delete($key);
 	}
 
 	/**
 	 * @return bool
 	 */
-	public function clear() {
+	public static function clear() {
 		return static::getFacadeRoot()->clear();
 	}
 
@@ -82,7 +82,7 @@ class Cache extends FacadeAbstract {
 	 * @return iterable
 	 * @throws \Psr\SimpleCache\InvalidArgumentException
 	 */
-	public function getMultiple($keys, $default = null) {
+	public static function getMultiple($keys, $default = null) {
 		return static::getFacadeRoot()->getMultiple($keys, $default);
 	}
 
@@ -92,7 +92,7 @@ class Cache extends FacadeAbstract {
 	 * @return bool
 	 * @throws \Psr\SimpleCache\InvalidArgumentException
 	 */
-	public function setMultiple($values, $ttl = null) {
+	public static function setMultiple($values, $ttl = null) {
 		return static::getFacadeRoot()->setMultiple($values, $ttl);
 	}
 
@@ -101,7 +101,7 @@ class Cache extends FacadeAbstract {
 	 * @return bool
 	 * @throws \Psr\SimpleCache\InvalidArgumentException
 	 */
-	public function deleteMultiple($keys) {
+	public static function deleteMultiple($keys) {
 		return static::getFacadeRoot()->deleteMultiple($keys);
 	}
 
@@ -110,7 +110,7 @@ class Cache extends FacadeAbstract {
 	 * @return bool
 	 * @throws \Psr\SimpleCache\InvalidArgumentException
 	 */
-	public function has($key) {
+	public static function has($key) {
 		return static::getFacadeRoot()->has($key);
 	}
 }
