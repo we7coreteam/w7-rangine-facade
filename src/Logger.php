@@ -12,28 +12,60 @@
 
 namespace W7\Facade;
 
-use Psr\Log\LoggerInterface;
 use W7\Contract\Logger\LoggerFactoryInterface;
 
 /**
  * Class Logger
  * @package W7\Facade
  *
- * @method static void emergency(string $message, array $context = [])
- * @method static void alert(string $message, array $context = [])
- * @method static void critical(string $message, array $context = [])
- * @method static void error(string $message, array $context = [])
- * @method static void warning(string $message, array $context = [])
- * @method static void notice(string $message, array $context = [])
- * @method static void info(string $message, array $context = [])
- * @method static void debug(string $message, array $context = [])
- * @method static void log($level, string $message, array $context = [])
- * @method static LoggerInterface channel($name = 'stack')
- *
  * @see \W7\Core\Log\Logger
  */
 class Logger extends FacadeAbstract {
 	protected static function getFacadeAccessor() {
 		return LoggerFactoryInterface::class;
+	}
+
+	public static function getFacadeRoot() : LoggerFactoryInterface {
+		return parent::getFacadeRoot();
+	}
+
+	public static function emergency(string $message, array $context = []) {
+		static::getFacadeRoot()->emergency($message, $context);
+	}
+
+	public static function alert(string $message, array $context = []) {
+		static::getFacadeRoot()->alert($message, $context);
+	}
+
+	public static function critical(string $message, array $context = []) {
+		static::getFacadeRoot()->critical($message, $context);
+	}
+
+	public static function error(string $message, array $context = []) {
+		static::getFacadeRoot()->error($message, $context);
+	}
+
+	public static function warning(string $message, array $context = []) {
+		static::getFacadeRoot()->warning($message, $context);
+	}
+
+	public static function notice(string $message, array $context = []) {
+		static::getFacadeRoot()->notice($message, $context);
+	}
+
+	public static function info(string $message, array $context = []) {
+		static::getFacadeRoot()->info($message, $context);
+	}
+
+	public static function debug(string $message, array $context = []) {
+		static::getFacadeRoot()->debug($message, $context);
+	}
+
+	public static function log($level, string $message, array $context = []) {
+		static::getFacadeRoot()->log($level, $message, $context);
+	}
+
+	public static function channel($name = 'stack') {
+		return static::getFacadeRoot()->channel($name);
 	}
 }

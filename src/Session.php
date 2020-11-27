@@ -12,21 +12,11 @@
 
 namespace W7\Facade;
 
+use W7\Contract\Session\SessionInterface;
+
 /**
  * Class Session
  * @package W7\Facade
- *
- * @method static string getName()
- * @method static void setId($sessionId)
- * @method static string getId()
- * @method static bool set($key, $value)
- * @method static bool has($key)
- * @method static mixed get($key, $default = '')
- * @method static mixed delete(array|string $keys)
- * @method static array all()
- * @method static bool destroy()
- * @method static bool close()
- * @method static void gc()
  *
  * @see \W7\Core\Session\Session
  */
@@ -35,7 +25,51 @@ class Session extends FacadeAbstract {
 		return '';
 	}
 
-	public static function getFacadeRoot() {
+	public static function getFacadeRoot() : SessionInterface {
 		return Context::getRequest()->session;
+	}
+
+	public static function getName() {
+		return static::getFacadeRoot()->getName();
+	}
+
+	public static function setId($sessionId) {
+		return static::getFacadeRoot()->setId($sessionId);
+	}
+
+	public static function getId() {
+		return static::getFacadeRoot()->getId();
+	}
+
+	public static function set($key, $value) {
+		return static::getFacadeRoot()->set($key, $value);
+	}
+
+	public static function has($key) {
+		return static::getFacadeRoot()->has($key);
+	}
+
+	public static function get($key, $default = '') {
+		return static::getFacadeRoot()->get($key, $default);
+	}
+
+	public static function delete($keys) {
+		return static::getFacadeRoot()->delete($keys);
+	}
+
+	public static function all() {
+		return static::getFacadeRoot()->all();
+	}
+
+	public static function destroy() {
+		return static::getFacadeRoot()->destroy();
+	}
+
+	public static function close() {
+		return static::getFacadeRoot()->close();
+	}
+
+	public static function gc() {
+		return static::getFacadeRoot()->gc();
 	}
 }

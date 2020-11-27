@@ -18,15 +18,30 @@ use W7\Contract\View\ViewInterface;
  * Class View
  * @package W7\Facade
  *
- * @method static void registerFunction($name, \Closure $callback)
- * @method static void registerConst($name, $value)
- * @method static void registerObject($name, object $object)
- * @method static string render($name, $context = [])
- *
  * @see \W7\Core\View\View
  */
 class View extends FacadeAbstract {
 	protected static function getFacadeAccessor() {
 		return ViewInterface::class;
+	}
+
+	public static function getFacadeRoot() : ViewInterface {
+		return parent::getFacadeRoot();
+	}
+
+	public static function registerFunction($name, \Closure $callback) {
+		return static::getFacadeRoot()->registerFunction($name, $callback);
+	}
+
+	public static function registerConst($name, $value) {
+		return static::getFacadeRoot()->registerConst($name, $value);
+	}
+
+	public static function registerObject($name, object $object) {
+		return static::getFacadeRoot()->registerObject($name, $object);
+	}
+
+	public static function render($name, $context = []) {
+		return static::getFacadeRoot()->render($name, $context);
 	}
 }

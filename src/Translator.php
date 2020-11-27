@@ -15,15 +15,33 @@ namespace W7\Facade;
 use W7\Contract\Translation\TranslatorInterface;
 
 /**
- * @method static string getLocale()
- * @method static void setLocale(string $locale)
- * @method static string|array|null get(string $key, array $replace = [], string $locale = null, bool $fallback = true)
- * @method static string choice($key, $number, array $replace = [], $locale = null)
+ * Class Translator
+ * @package W7\Facade
  *
  * @see \W7\Lang\Translator\Translator
  */
 class Translator extends FacadeAbstract {
 	protected static function getFacadeAccessor() {
 		return TranslatorInterface::class;
+	}
+
+	public static function getFacadeRoot() : TranslatorInterface {
+		return parent::getFacadeRoot();
+	}
+
+	public static function setLocale(string $locale) {
+		static::getFacadeRoot()->setLocale($locale);
+	}
+
+	public static function getLocale() {
+		return static::getFacadeRoot()->getLocale();
+	}
+
+	public static function get(string $key, array $replace = [], string $locale = null) {
+		return static::getFacadeRoot()->get($key, $replace, $locale);
+	}
+
+	public static function choice($key, $number, array $replace = [], $locale = null) {
+		return static::getFacadeRoot()->choice($key, $number, $replace, $locale);
 	}
 }

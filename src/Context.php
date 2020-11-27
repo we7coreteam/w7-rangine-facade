@@ -12,26 +12,73 @@
 
 namespace W7\Facade;
 
+use W7\Http\Message\Server\Request;
+use W7\Http\Message\Server\Response;
+
 /**
  * Class Context
  * @package W7\Facade
  *
- * @method static \W7\Http\Message\Server\Request getRequest()
- * @method static \W7\Http\Message\Server\Response getResponse()
- * @method static void setContextData(array $contextData = [])
- * @method static array getContextData()
- * @method static void setRequest(\W7\Http\Message\Server\Request $request)
- * @method static void setResponse(\W7\Http\Message\Server\Response $response)
- * @method static void setContextDataByKey(string $key, $val)
- * @method static mixed getContextDataByKey(string $key, $default = null)
- * @method static void fork($parentCoId)
- * @method static void destroy($coroutineId = null)
- * @method static array all()
- * @method static integer getCoroutineId()
- * @method static integer getLastCoId()
+ * @see \W7\Core\Helper\Storage\Context
  */
 class Context extends FacadeAbstract {
 	protected static function getFacadeAccessor() {
 		return \W7\Core\Helper\Storage\Context::class;
+	}
+
+	public static function getFacadeRoot() : \W7\Core\Helper\Storage\Context {
+		return parent::getFacadeRoot();
+	}
+
+	public static function getCoroutineId() {
+		return static::getFacadeRoot()->getCoroutineId();
+	}
+
+	public static function getLastCoId() {
+		return static::getFacadeRoot()->getLastCoId();
+	}
+
+	public static function setContextData(array $contextData = []) {
+		static::getFacadeRoot()->setContextData($contextData);
+	}
+
+	public static function getContextData() {
+		return static::getFacadeRoot()->getContextData();
+	}
+
+	public static function setContextDataByKey(string $key, $val) {
+		static::getFacadeRoot()->setContextDataByKey($key, $val);
+	}
+
+	public static function getContextDataByKey(string $key, $default = null) {
+		return static::getFacadeRoot()->getContextDataByKey($key, $default);
+	}
+
+	public static function all() {
+		return static::getFacadeRoot()->all();
+	}
+
+	public static function fork($parentCoId) {
+		static::getFacadeRoot()->fork($parentCoId);
+	}
+
+	public static function destroy($coroutineId = null) {
+		static::getFacadeRoot()->destroy($coroutineId);
+	}
+
+	public static function setRequest(Request $request) {
+		static::getFacadeRoot()->setRequest($request);
+	}
+
+	public static function getRequest() {
+		return static::getFacadeRoot()->getRequest();
+	}
+
+	public static function setResponse(Response $response) {
+		static::getFacadeRoot()->setResponse($response);
+	}
+
+	public static function getResponse() {
+		return static::getFacadeRoot()->getResponse();
 	}
 }
