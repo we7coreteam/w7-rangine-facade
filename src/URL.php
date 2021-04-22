@@ -2,7 +2,7 @@
 
 namespace W7\Facade;
 
-use W7\Contract\Router\UrlGenerator;
+use W7\Contract\Router\UrlGeneratorInterface;
 
 /**
  * @method static string asset(string $path, bool $secure = null)
@@ -21,6 +21,6 @@ class URL extends FacadeAbstract {
      */
     protected static function getFacadeAccessor()
     {
-        return UrlGenerator::class;
+        return UrlGeneratorInterface::class;
     }
 }
