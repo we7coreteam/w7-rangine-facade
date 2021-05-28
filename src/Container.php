@@ -18,13 +18,11 @@ namespace W7\Facade;
  *
  * @method static void registerDeferredService(array $services)
  * @method static void registerDeferredServiceLoader(\Closure $loader)
- * @method static void set($name, $handle, ...$params)
+ * @method static void set($name, $handle, $shared = true)
  * @method static bool has($name)
- * @method static mixed get($name, array $params = [])
- * @method static void append($dataKey, array $value, $default = [])
+ * @method static mixed get($name)
  * @method static mixed clone($name, array $params = [])
  * @method static void delete($name)
- * @method static mixed singleton($name, array $params = [])
  * @method static mixed clear()
  *
  * @see \W7\Core\Container\Container
