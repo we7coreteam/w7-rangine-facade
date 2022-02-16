@@ -16,6 +16,15 @@ namespace W7\Facade;
  * Class Container
  * @package W7\Facade
  *
+ * @method static void registerDeferredService(array $services)
+ * @method static void registerDeferredServiceLoader(\Closure $loader)
+ * @method static void set($name, $handle, $shared = true)
+ * @method static bool has($name)
+ * @method static mixed get($name)
+ * @method static mixed clone($name, array $params = [])
+ * @method static void delete($name)
+ * @method static mixed clear()
+ *
  * @see \W7\Core\Container\Container
  */
 class Container extends FacadeAbstract {
@@ -25,45 +34,5 @@ class Container extends FacadeAbstract {
 
 	public static function getFacadeRoot() {
 		return self::getContainer();
-	}
-
-	public static function registerDeferredService(array $services) {
-		static::getFacadeRoot()->registerDeferredService($services);
-	}
-
-	public static function registerDeferredServiceLoader(\Closure $loader) {
-		static::getFacadeRoot()->registerDeferredServiceLoader($loader);
-	}
-
-	public static function set($name, $handle, ...$params) {
-		static::getFacadeRoot()->set($name, $handle, ...$params);
-	}
-
-	public static function has($name) {
-		return static::getFacadeRoot()->has($name);
-	}
-
-	public static function get($name, array $params = []) {
-		return static::getFacadeRoot()->get($name, $params);
-	}
-
-	public static function append($name, array $value, $default = []) {
-		static::getFacadeRoot()->append($name, $value, $default);
-	}
-
-	public static function clone($name, array $params = []) {
-		return static::getFacadeRoot()->clone($name, $params);
-	}
-
-	public static function delete($name) {
-		static::getFacadeRoot()->delete($name);
-	}
-
-	public static function singleton($name, array $params = []) {
-		return static::getFacadeRoot()->singleton($name, $params);
-	}
-
-	public static function clear() {
-		static::getFacadeRoot()->clear();
 	}
 }
