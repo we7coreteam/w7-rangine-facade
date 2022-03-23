@@ -15,7 +15,7 @@
 	],
 	"require": {
 		"php": ">=7.2",
-		"w7/rangine-contract": "*"
+		"w7/rangine-contract": "~3.1"
 	},
 	"require-dev": {
 		"w7/php-cs-fixer": "*"
@@ -23,6 +23,11 @@
 	"autoload": {
 		"psr-4": {
 			"W7\\Facade\\": "src/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"w7/php-cs-fixer": true
 		}
 	}
 }
