@@ -14,7 +14,7 @@
 		}
 	],
 	"require": {
-		"php": ">=7.2",
+		"php": ">=8.1",
 		"w7/rangine-contract": "*"
 	},
 	"require-dev": {
